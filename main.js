@@ -8,6 +8,7 @@ let colorPicker = document.querySelector('#color');
 let clearButton = document.querySelector('.clear');
 let rainbowButton = document.querySelector('.rainbow');
 let rainbow = false;
+let gridButton = document.querySelector('.gridLine');
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -20,6 +21,7 @@ function changeDimension(dimension){
     let step = dimension**2;
     for(let i = 0; i<step; i++){
         const div = document.createElement('div');
+        div.classList.add('outline'); 
         container.appendChild(div);
     }
     document.documentElement.style.setProperty('--size', `${480/dimension}px`);
@@ -73,4 +75,8 @@ clearButton.addEventListener('click', ()=>{
 
 rainbowButton.addEventListener('click', ()=>{rainbow = true});
 
-//add show/hide grid
+gridButton.addEventListener('click', ()=>{
+    divs.forEach(div=>{
+        div.classList.toggle('outline');  
+    })
+})
