@@ -6,6 +6,8 @@ let divs;
 let currentColor = 'black';
 let colorPicker = document.querySelector('#color');
 let clearButton = document.querySelector('.clear');
+let rainbowButton = document.querySelector('.rainbow');
+let rainbow = false;
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -35,14 +37,15 @@ function updateLabel(e) {
 
 function color(e) { 
     if (e.type == 'mouseover' && !mouseDown) return;
+    if (rainbow){
+        currentColor = getRandomColor();
+    }
     e.target.style.backgroundColor = `${currentColor}`;
 }
 
-dimensionDiv.addEventListener('change', (e)=>{
-   changeDimension(e.target.value);
-});
-
-dimensionDiv.addEventListener('input', updateLabel);
+function getRandomColor(){
+    return `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`
+}
 
 function attachEvent(){
     divs.forEach(div => {
@@ -50,6 +53,13 @@ function attachEvent(){
         div.addEventListener('mousedown', color);
     });
 }
+
+
+dimensionDiv.addEventListener('change', (e)=>{
+    changeDimension(e.target.value);
+ });
+ 
+ dimensionDiv.addEventListener('input', updateLabel);
 
 colorPicker.addEventListener('input', (e)=>{
     currentColor = e.target.value;
@@ -60,3 +70,7 @@ clearButton.addEventListener('click', ()=>{
         div.style.backgroundColor = 'white';
     })
 })
+
+rainbowButton.addEventListener('click', ()=>{rainbow = true});
+
+//add show/hide grid
