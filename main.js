@@ -64,6 +64,7 @@ dimensionDiv.addEventListener('change', (e)=>{
  dimensionDiv.addEventListener('input', updateLabel);
 
 colorPicker.addEventListener('input', (e)=>{
+    rainbow = false;
     currentColor = e.target.value;
 })
 
@@ -73,7 +74,14 @@ clearButton.addEventListener('click', ()=>{
     })
 })
 
-rainbowButton.addEventListener('click', ()=>{rainbow = true});
+rainbowButton.addEventListener('click', ()=>{
+    if (rainbow){
+        rainbow = false;
+        currentColor = 'black'
+    }else{
+        rainbow = true
+    }
+});
 
 gridButton.addEventListener('click', ()=>{
     divs.forEach(div=>{
