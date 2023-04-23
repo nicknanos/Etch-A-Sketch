@@ -11,8 +11,10 @@ body {
     padding: 0px;
     margin: 0px;
     display: flex;
+    justify-content: space-between;
     flex-flow: column nowrap;
     gap: 30px;
+    min-height: 100vh;
 }
 
 header {
@@ -22,6 +24,7 @@ header {
     padding: 30px;
     background-color: purple;
     color: white;
+    max-height: 10vh;
 }
 
 main {
@@ -64,6 +67,7 @@ main {
 }
 
 footer {
+    margin-top: auto;
     flex: 1;
     background-color: purple;
     color: white;
