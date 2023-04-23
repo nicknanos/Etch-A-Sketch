@@ -73,3 +73,7 @@ footer {
     color: white;
     text-align: center;
 }
+
+#monica-content-root {
+    display: none;
+} 
