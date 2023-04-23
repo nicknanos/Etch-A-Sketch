@@ -1,0 +1,67 @@
+:root {
+    --dimension: 480px;
+    --size: 17.14px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+header {
+    text-align: center;
+    flex: 1;
+    font-size: 40px;
+    padding: 30px;
+    background-color: purple;
+    color: white;
+}
+
+main {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-right: 30px;
+}
+
+.container {
+    outline: 2px solid red;
+    display: flex;
+    flex-flow: row wrap;
+    width: var(--dimension);
+    height: var(--dimension);
+}
+
+.container > div {
+    width: var(--size);
+    height: var(--size);
+    outline: 1px solid gray;
+}
+
+.container > div:hover {
+    transition: .1 s;
+    background-color: lightgrey;
+}
+
+footer {
+    flex: 1;
+    background-color: purple;
+    color: white;
+    text-align: center;
+}
