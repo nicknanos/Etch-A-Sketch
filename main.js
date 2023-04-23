@@ -5,6 +5,7 @@ let dimLabel = document.querySelector('#currentDimension');
 let divs;
 let currentColor = 'black';
 let colorPicker = document.querySelector('#color');
+let clearButton = document.querySelector('.clear');
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -52,4 +53,10 @@ function attachEvent(){
 
 colorPicker.addEventListener('input', (e)=>{
     currentColor = e.target.value;
+})
+
+clearButton.addEventListener('click', ()=>{
+    divs.forEach(div =>{
+        div.style.backgroundColor = 'white';
+    })
 })
