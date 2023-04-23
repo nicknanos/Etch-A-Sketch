@@ -2,6 +2,13 @@ let container = document.querySelector('.container');
 let dimensionDiv = document.querySelector('#size');
 let dimension = dimensionDiv.value;
 let dimLabel = document.querySelector('#currentDimension');
+let divs;
+
+
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
 changeDimension(dimension);
 
 function changeDimension(dimension){
@@ -12,6 +19,8 @@ function changeDimension(dimension){
         container.appendChild(div);
     }
     document.documentElement.style.setProperty('--size', `${480/dimension}px`);
+    divs = document.querySelectorAll('div.container div');
+    attachEvent();
 }
 
 function clear(){
@@ -22,9 +31,20 @@ function updateLabel(e) {
     dimLabel.textContent = `${e.target.value}x${e.target.value}`
 }
 
+function color(e) { 
+    if (e.type == 'mouseover' && !mouseDown) return;
+    e.target.style.backgroundColor = 'black';
+}
 
 dimensionDiv.addEventListener('change', (e)=>{
    changeDimension(e.target.value);
-})
+});
 
-dimensionDiv.addEventListener('input', updateLabel)
+dimensionDiv.addEventListener('input', updateLabel);
+
+function attachEvent(){
+    divs.forEach(div => {
+        div.addEventListener('mouseover', color);
+        div.addEventListener('mousedown', color);
+    });
+}
