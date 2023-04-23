@@ -3,7 +3,8 @@ let dimensionDiv = document.querySelector('#size');
 let dimension = dimensionDiv.value;
 let dimLabel = document.querySelector('#currentDimension');
 let divs;
-
+let currentColor = 'black';
+let colorPicker = document.querySelector('#color');
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -33,7 +34,7 @@ function updateLabel(e) {
 
 function color(e) { 
     if (e.type == 'mouseover' && !mouseDown) return;
-    e.target.style.backgroundColor = 'black';
+    e.target.style.backgroundColor = `${currentColor}`;
 }
 
 dimensionDiv.addEventListener('change', (e)=>{
@@ -48,3 +49,7 @@ function attachEvent(){
         div.addEventListener('mousedown', color);
     });
 }
+
+colorPicker.addEventListener('input', (e)=>{
+    currentColor = e.target.value;
+})
