@@ -12,7 +12,7 @@ let gridButton = document.querySelector('.gridLine');
 let divs;
 
 //Selected options
-let currentColor = 'black';
+let currentColor = colorPicker.value;
 let rainbow = false;
 
 //Detect Mouse Hold
