@@ -35,10 +35,10 @@ header {
     font-size: 60px;
     padding: 30px;
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--secondary-color);
     max-height: 10vh;
-    font-family: 'Indie Flower', cursive;
-    text-shadow: 2px 2px 4px var(--secondary-color);
+    font-family: 'Pacifico', cursive, sans-serif;
+    text-shadow: 2px 2px 4px var(--text-color);
 }
 
 main {
@@ -171,9 +171,9 @@ footer {
     margin-top: auto;
     flex: 1;
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--secondary-color);
     text-align: center;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Pacifico', cursive, sans-serif;
     font-size: 20px;
     text-shadow: 2px 2px 4px black;
 
