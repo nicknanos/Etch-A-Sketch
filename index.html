@@ -9,13 +9,13 @@
     <script src="main.js" defer></script>
     <title>Etch-A-Sketch</title>
 </head>
-<body>
+<body ondragstart="return false;" ondrop="return false;">
     <header>Etch-A-Sketch</header>
     <main>
         <div class="menu">
             <div class="colorBox">
                 <label for="color">Pick a color:</label>
-                <input type="color" name="color" id="color">
+                <input type="color" name="color" id="color" value="#FF7F50">
             </div>
             <label for="size">Change Dimensions</label>
             <input type="range" name="size" id="size" min="4" max="64" value="16">
