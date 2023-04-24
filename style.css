@@ -88,10 +88,34 @@ main {
     border-radius: 50%;
     border: none;
   }
-  #color:-moz-color-swatch {
+#color:-moz-color-swatch {
     border-radius: 50%;
     border: none;
   }
+
+
+#size {
+    margin: 7px 0px;
+    appearance: none !important;
+    width: 180px;
+    height: 2px;
+    background: black;
+    border: none;
+    outline: none;
+}
+#size::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 17px;
+    height:17px;
+    background: var(--accent-color);
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#size::-webkit-slider-thumb:hover {
+    transform: scale(1.1,1.1);
+    transition: .5s;
+}
 
 .menu button {
     margin: 5px 0px;
