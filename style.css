@@ -1,6 +1,12 @@
 :root {
     --dimension: 480px;
     --size: 17.14px;
+    --primary-color: #E2725B;
+    --secondary-color: #FFDB58;
+    --accent-color: #FF7F50;
+    --background-color: #FFFDD0;
+    --text-color: #808000;
+    --neutral-color: #FFE5B4;
 }
 
 html {
@@ -15,6 +21,7 @@ body {
     flex-flow: column nowrap;
     gap: 30px;
     min-height: 100vh;
+    background-color: var(--background-color);
 }
 
 header {
@@ -22,8 +29,8 @@ header {
     flex: 1;
     font-size: 40px;
     padding: 30px;
-    background-color: purple;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     max-height: 10vh;
 }
 
@@ -41,6 +48,27 @@ main {
     text-align: center;
     gap: 10px;
     margin-right: 30px;
+}
+
+.menu button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 150px;
+}
+
+.menu button:hover {
+    transition: 1s;
+    outline: 2px solid var(--secondary-color);
+    cursor: pointer;
+    transform: scale(1.1,1.1);
+}
+
+.menu button:active {
+    transition: .1s;
+    transform: scale(1,1);
 }
 
 .container {
@@ -69,8 +97,8 @@ main {
 footer {
     margin-top: auto;
     flex: 1;
-    background-color: purple;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-align: center;
 }
 
