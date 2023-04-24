@@ -61,11 +61,11 @@ main {
     outline: 1px solid gray;
 }
 
-.container > div:hover {
+/* .container > div:hover {
     transition: .1 s;
     background-color: lightgrey;
 }
-
+ */
 footer {
     margin-top: auto;
     flex: 1;

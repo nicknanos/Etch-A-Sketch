@@ -21,7 +21,8 @@ function changeDimension(dimension){
     let step = dimension**2;
     for(let i = 0; i<step; i++){
         const div = document.createElement('div');
-        div.classList.add('outline'); 
+        div.classList.add('outline');
+        div.style.backgroundColor = 'white'; 
         container.appendChild(div);
     }
     document.documentElement.style.setProperty('--size', `${480/dimension}px`);
@@ -55,6 +56,20 @@ function attachEvent(){
         div.addEventListener('mousedown', color);
     });
 }
+
+
+divs.forEach(div=>{
+    div.addEventListener('mouseenter',()=>{
+        if (div.style.backgroundColor == 'white'){
+            div.style.backgroundColor = "lightgray"
+        }
+    });
+    div.addEventListener('mouseleave',()=>{
+        if (div.style.backgroundColor == 'lightgray'){
+            div.style.backgroundColor = "white"
+        }
+    });
+});
 
 
 dimensionDiv.addEventListener('change', (e)=>{
