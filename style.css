@@ -79,9 +79,13 @@ main {
     appearance: none;
     background-color: transparent;
     cursor: pointer;
-    width: 50px;
+    width: 47px;
     height: 50px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.menu #color:hover {
+    transition: 2s;
+    transform: scale(1.1,1.1);
 }
 
 #color::-webkit-color-swatch {
@@ -197,6 +201,7 @@ footer .socials ul li a {
   }
   
 footer .socials ul li a:hover {
+    transition: .8s;
     color: var(--accent-color);
   }
 
